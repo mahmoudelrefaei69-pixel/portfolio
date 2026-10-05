@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mahmoud Elrefaey | Junior Data Analyst</title>
+<meta name="description" content="Portfolio of Mahmoud Elrefaey, Junior Data Analyst and Computer Science student at Tanta University. Excel, SQL, Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8f9;--card:#fff;--ink:#101c26;--mute:#566572;--line:#dde4e8;--acc:#0b7a75;--accbg:#e2f3f1;--navbg:rgba(246,248,249,.88);--shadow:0 1px 2px rgba(16,28,38,.05),0 8px 24px rgba(16,28,38,.05);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f171d;--card:#16212a;--ink:#e8eef2;--mute:#9aabb7;--line:#263540;--acc:#4fc7bf;--accbg:#173a3b;--navbg:rgba(15,23,29,.88);--shadow:none}}
+:root[data-theme="dark"]{--bg:#0f171d;--card:#16212a;--ink:#e8eef2;--mute:#9aabb7;--line:#263540;--acc:#4fc7bf;--accbg:#173a3b;--navbg:rgba(15,23,29,.88);--shadow:none}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,system-ui,sans-serif;line-height:1.12;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.sh{margin-bottom:40px;max-width:620px}
+.sh h2{font-size:clamp(28px,4vw,40px);font-weight:700}
+.sh p{color:var(--mute);margin:12px 0 0}
+/* nav */
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:var(--navbg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 18px "Bricolage Grotesque",sans-serif;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--acc);color:var(--bg);display:grid;place-items:center;font:800 14px Inter,sans-serif;font-style:normal}
+.links{display:flex;gap:4px;align-items:center}
+.links a{padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);transition:color .2s,background .2s}
+.links a:hover,.links a.on{color:var(--ink);background:var(--accbg)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:40px;height:40px;color:var(--ink);cursor:pointer;font-size:18px}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .15s,border-color .2s,background .2s}
+.btn:hover{border-color:var(--acc);transform:translateY(-1px)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{color:#08201f}}
+:root[data-theme="dark"] .btn.p{color:#08201f}
+.btn.p:hover{filter:brightness(1.08)}
+.btn.sm{padding:9px 14px;font-size:14px}
+/* hero */
+#home{padding:150px 0 88px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(42px,6.4vw,76px);font-weight:800}
+.role{font:600 clamp(18px,2.4vw,24px) "Bricolage Grotesque",sans-serif;color:var(--acc);margin:14px 0 20px}
+.hero p.lead{font-size:18px;color:var(--mute);max-width:540px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:13px;font-weight:500;padding:5px 11px;border-radius:999px;background:var(--accbg);color:var(--acc);border:1px solid transparent}
+.soc{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.soc a{font-size:14px;font-weight:500;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--mute);transition:.2s}
+.soc a:hover{color:var(--ink);border-color:var(--acc)}
+/* hero dashboard visual */
+.dash{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px}
+.dh{display:flex;gap:6px;margin-bottom:16px}.dh b{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.kp div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kp small{display:block;color:var(--mute);font-size:12px}.kp strong{font:700 18px "Bricolage Grotesque",sans-serif}
+.bars{display:flex;align-items:flex-end;gap:10px;height:150px;padding:10px 4px 0;border-top:1px dashed var(--line)}
+.bars span{flex:1;background:var(--accbg);border-radius:6px 6px 0 0;height:var(--h);transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms)}
+.bars span:nth-child(3n){background:var(--acc)}
+@keyframes grow{from{transform:scaleY(0)}}
+.dq{margin-top:14px;font-size:13px;color:var(--mute);border-radius:8px;background:var(--bg);padding:10px 12px;border:1px solid var(--line)}
+.dq b{color:var(--acc);font-weight:600}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about p{margin:0 0 16px;color:var(--mute)}
+.focus{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.focus div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:500;font-size:15px}
+/* skills */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.card h3{font-size:20px;margin-bottom:6px}.card>p{color:var(--mute);font-size:14.5px;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:14.5px;font-weight:500;background:var(--bg)}
+.ic{width:22px;height:22px;border-radius:6px;background:var(--accbg);color:var(--acc);display:grid;place-items:center;font:700 10px Inter,sans-serif}
+/* projects */
+#projects{background:var(--card);border-block:1px solid var(--line)}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proj{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.proj:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:var(--shadow)}
+.thumb{height:150px;background:var(--accbg);display:flex;align-items:flex-end;gap:8px;padding:20px 24px 0;border-bottom:1px solid var(--line);overflow:hidden}
+.thumb i{flex:1;background:var(--acc);opacity:.85;border-radius:5px 5px 0 0;height:var(--h)}
+.thumb i:nth-child(even){opacity:.35}
+.thumb.db{align-items:center;justify-content:center;gap:14px;padding:0}
+.thumb.db u{width:64px;height:44px;border:2px solid var(--acc);border-radius:8px;background:var(--bg);display:grid;place-items:center;font:700 12px Inter,sans-serif;color:var(--acc);text-decoration:none}
+.thumb.db s{width:22px;height:2px;background:var(--acc)}
+.pb{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.pb h3{font-size:22px}.pb p{margin:0;color:var(--mute);font-size:15px}
+.pb .chips{margin-top:auto}.pb .chips .tag{border-color:var(--line);background:var(--card);color:var(--ink)}
+.pbtn{display:flex;gap:10px;margin-top:4px}
+/* services */
+.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.vg .card{box-shadow:none}
+.vg ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.vg li{font-size:14.5px;color:var(--mute);padding-left:22px;position:relative}
+.vg li::before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:6px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg) translateY(-3px)}
+.vg h3{font-size:19px;margin-bottom:14px}
+.note{margin-top:24px;color:var(--mute);font-size:14.5px}
+/* tools */
+.tg{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 8px;text-align:center;font-weight:500;font-size:14.5px;display:grid;gap:10px;justify-items:center}
+.tool .ic{width:44px;height:44px;border-radius:12px;font-size:14px}
+/* edu */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu{display:flex;gap:18px;align-items:flex-start}
+.edu .ic{width:48px;height:48px;border-radius:12px;font-size:15px;flex:none}
+.edu h3{font-size:20px}.edu p{margin:4px 0;color:var(--mute);font-size:15px}
+.gpa{display:inline-block;margin-top:8px;padding:4px 12px;border-radius:999px;background:var(--accbg);color:var(--acc);font-weight:600;font-size:14px}
+/* find me */
+.fg{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.fc{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.2s}
+.fc:hover{border-color:var(--acc);transform:translateY(-3px)}
+.fc strong{font:700 17px "Bricolage Grotesque",sans-serif}.fc span{font-size:13.5px;color:var(--mute)}
+.fc .ic{margin-bottom:8px;width:34px;height:34px;font-size:12px}
+/* contact */
+.cg{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:500}
+input,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:var(--acc)}
+textarea{min-height:140px;resize:vertical}
+#msg{font-size:14.5px;min-height:22px;color:var(--mute)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+footer nav{all:unset}footer .fl{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer .fl a{color:var(--mute);font-size:14.5px}footer .fl a:hover{color:var(--acc)}
+footer p{margin:0;color:var(--mute);font-size:14.5px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:90%}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:1000px){.vg{grid-template-columns:1fr 1fr}.tg{grid-template-columns:repeat(4,1fr)}.fg{grid-template-columns:repeat(3,1fr)}.sg{grid-template-columns:1fr}}
+@media(max-width:820px){
+section{padding:72px 0}#home{padding:110px 0 64px}
+.hero,.about,.cg,.two,.pg{grid-template-columns:1fr}.hero{gap:40px}
+.burger{display:block}
+.links{position:fixed;top:calc(64px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px 24px 20px;border-bottom:1px solid var(--line);display:none}
+.links.open{display:flex}.links a{padding:12px}
+}
+@media(max-width:560px){.vg,.focus{grid-template-columns:1fr}.tg{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr}.wrap{padding:0 20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#home" class="logo"><i>M</i>Mahmoud Elrefaey</a>
+  <button class="burger" aria-label="Toggle menu" aria-expanded="false" id="burger">&#9776;</button>
+  <div class="links" id="links">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<main>
+<section id="home"><div class="wrap hero">
+  <div>
+    <h1>Mahmoud Elrefaey</h1>
+    <div class="role">Junior Data Analyst</div>
+    <p class="lead">Computer Science student and Junior Data Analyst passionate about transforming raw data into meaningful insights using Excel, SQL, Power BI, and data analysis techniques.</p>
+    <div class="cta"><a class="btn p" href="#projects">View My Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+    <div class="tags"><span class="tag">Excel</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span></div>
+    <div class="soc" data-social></div>
+  </div>
+  <div class="dash" aria-hidden="true">
+    <div class="dh"><b></b><b></b><b></b></div>
+    <div class="kp"><div><small>Raw rows</small><strong>Cleaned</strong></div><div><small>Model</small><strong>Related</strong></div><div><small>Output</small><strong>Insights</strong></div></div>
+    <div class="bars">
+      <span style="--h:38%;--i:0"></span><span style="--h:56%;--i:1"></span><span style="--h:46%;--i:2"></span><span style="--h:72%;--i:3"></span><span style="--h:60%;--i:4"></span><span style="--h:88%;--i:5"></span><span style="--h:68%;--i:6"></span><span style="--h:96%;--i:7"></span>
+    </div>
+    <div class="dq"><b>SELECT</b> category, SUM(sales) <b>FROM</b> orders <b>GROUP BY</b> category;</div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="sh rv"><h2>About me</h2></div>
+  <div class="about rv">
+    <div>
+      <p>I'm a third-year Computer Science student at the Faculty of Computers and Information, Tanta University, and I'm building my skills in data analysis through coursework and hands-on projects.</p>
+      <p>I enjoy taking messy, unstructured data and turning it into something people can read and act on. That means cleaning and transforming it, modeling it so the numbers connect correctly, and presenting it in clear dashboards.</p>
+      <p>I'm still early in my career, and I'm focused on learning, practicing on real datasets, and improving with every project.</p>
+    </div>
+    <div class="focus"><div>Data cleaning</div><div>Data transformation</div><div>SQL</div><div>Excel</div><div>Power BI</div><div>Data visualization</div><div>Data modeling</div><div>Business insights</div></div>
+  </div>
+</div></section>
+
+<section id="skills" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="sh rv"><h2>Skills</h2><p>The methods and tools I use in my projects.</p></div>
+  <div class="sg rv" id="skillgrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="sh rv"><h2>Featured projects</h2><p>Hands-on work covering database design, dashboards, data cleaning, and reporting.</p></div>
+  <div class="pg" id="projgrid"></div>
+</div></section>
+
+<section id="services" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sh rv"><h2>Services</h2><p>Freelance help for small datasets and straightforward analysis tasks.</p></div>
+  <div class="vg rv" id="svc"></div>
+  <p class="note">Have a project in mind? Tell me about your data and what you need, and I'll let you know honestly whether I'm a good fit.</p>
+</div></section>
+
+<section id="tools" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="sh rv"><h2>Tools &amp; technologies</h2></div>
+  <div class="tg rv" id="toolgrid"></div>
+</div></section>
+
+<section id="education"><div class="wrap two rv">
+  <div>
+    <div class="sh" style="margin-bottom:20px"><h2>Education</h2></div>
+    <div class="card edu"><div class="ic">TU</div><div><h3>Tanta University</h3><p>Faculty of Computers and Information</p><p>Computer Science, 3rd Year</p><span class="gpa">GPA: 3.2</span></div></div>
+  </div>
+  <div>
+    <div class="sh" style="margin-bottom:20px"><h2>Certifications</h2></div>
+    <div class="card edu"><div class="ic">IBM</div><div><h3>Data Fundamentals</h3><p>IBM SkillsBuild</p></div></div>
+  </div>
+</div></section>
+
+<section id="online" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sh rv"><h2>Find me online</h2><p>Browse my profiles or get in touch on the platform you prefer.</p></div>
+  <div class="fg rv" id="findgrid"></div>
+</div></section>
+
+<section id="contact" style="background:var(--card);border-top:1px solid var(--line)"><div class="wrap cg">
+  <div class="rv">
+    <div class="sh"><h2>Contact</h2><p>Send a message about a project, a question, or an opportunity.</p></div>
+    <p style="margin:0 0 6px;font-weight:600">Mahmoud Elrefaey</p>
+    <p style="margin:0;color:var(--mute)">Junior Data Analyst</p>
+    <div class="soc" data-social></div>
+  </div>
+  <form id="form" class="rv" novalidate>
+    <label>Name<input name="name" autocomplete="name" required></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required></label>
+    <label>Message<textarea name="message" required></textarea></label>
+    <div><button class="btn p" type="submit">Send Message</button></div>
+    <div id="msg" role="status"></div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>© 2026 Mahmoud Elrefaey. All rights reserved.</p>
+  <div class="fl"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* Replace these placeholders with real links. Leave "" for unknown values. */
+var CONFIG={
+  email:"", /* add Mahmoud's real email here to enable the contact form */
+  links:{
+    LinkedIn:"https://www.linkedin.com/",
+    GitHub:"https://github.com/",
+    Upwork:"https://www.upwork.com/",
+    Fiverr:"https://www.fiverr.com/",
+    Khamsat:"https://khamsat.com/"
+  }
+};
+var $=function(s){return document.querySelector(s)};
+var ic=function(t){return '<span class="ic">'+t+'</span>'};
+var chips=function(a){return a.map(function(x){return '<span class="chip">'+ic(x[0])+x[1]+'</span>'}).join('')};
+
+document.querySelectorAll('[data-social]').forEach(function(el){
+  el.innerHTML=Object.keys(CONFIG.links).map(function(k){return '<a href="'+CONFIG.links[k]+'" target="_blank" rel="noopener noreferrer">'+k+'</a>'}).join('');
+});
+
+$('#skillgrid').innerHTML=[
+ ['Data Analysis','Working with data from raw to ready.',[['DC','Data Cleaning'],['DT','Data Transformation'],['DV','Data Visualization'],['DA','Data Analysis']]],
+ ['Tools','Software I use day to day.',[['XL','Microsoft Excel'],['PQ','Power Query'],['PB','Power BI'],['SQL','SQL'],['fx','DAX']]],
+ ['Database','Structuring and storing data.',[['My','MySQL'],['RD','Relational Databases'],['DM','Data Modeling']]]
+].map(function(g){return '<div class="card"><h3>'+g[0]+'</h3><p>'+g[1]+'</p><div class="chips">'+chips(g[2])+'</div></div>'}).join('');
+
+var projects=[
+ {t:'SQL Healthcare Database',d:'Designed and implemented a relational healthcare database using MySQL, including patients, doctors, appointments, and related entities. Applied primary keys, foreign keys, constraints, and relational database concepts.',k:['MySQL','SQL','Database Design'],v:'db',gh:1},
+ {t:'Superstore Sales Dashboard',d:'Built an interactive sales dashboard using Excel and Power BI concepts to analyze sales performance, customers, products, and geographic trends.',k:['Excel','PivotTables','PivotCharts','Slicers','Data Visualization'],h:[40,62,50,78,66,90,72],gh:1},
+ {t:'Bike Sales Data Analysis',d:'Cleaned and transformed a Bike Sales dataset using Power Query, preparing the data for analysis and visualization.',k:['Excel','Power Query','Data Cleaning','Data Transformation'],h:[70,45,82,55,64,38,58],gh:1},
+ {t:'Power BI Data Analysis',d:'Created interactive Power BI reports using data modeling, DAX measures, KPIs, filters, and interactive visualizations to turn raw data into useful business insights.',k:['Power BI','DAX','Data Modeling','Data Visualization'],h:[34,52,48,70,60,84,96],gh:1}
+];
+$('#projgrid').innerHTML=projects.map(function(p){
+ var th=p.v==='db'?'<div class="thumb db"><u>patients</u><s></s><u>visits</u><s></s><u>doctors</u></div>':'<div class="thumb">'+p.h.map(function(h){return '<i style="--h:'+h+'%"></i>'}).join('')+'</div>';
+ return '<article class="proj rv">'+th+'<div class="pb"><h3>'+p.t+'</h3><p>'+p.d+'</p><div class="chips">'+p.k.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')+'</div><div class="pbtn"><a class="btn p sm" href="#" data-todo="Project link not added yet">View Project</a><a class="btn sm" href="#" data-todo="GitHub link not added yet">GitHub</a></div></div></article>';
+}).join('');
+
+$('#svc').innerHTML=[
+ ['Data Cleaning & Preparation',['Clean messy datasets','Remove duplicates','Handle missing values','Prepare data for analysis']],
+ ['Excel Data Analysis',['Excel formulas','PivotTables','PivotCharts','Interactive dashboards','Data analysis']],
+ ['Power BI Dashboards',['Interactive dashboards','KPIs','Data visualization','Basic data modeling','DAX measures']],
+ ['SQL Data Analysis',['SQL queries','Filtering and aggregation','Joins','Data extraction','Database analysis']]
+].map(function(s){return '<div class="card"><h3>'+s[0]+'</h3><ul>'+s[1].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'}).join('');
+
+$('#toolgrid').innerHTML=[['XL','Excel'],['SQL','SQL'],['My','MySQL'],['PB','Power BI'],['PQ','Power Query'],['fx','DAX'],['GH','GitHub']].map(function(t){return '<div class="tool">'+ic(t[0])+t[1]+'</div>'}).join('');
+
+var sub={LinkedIn:'Professional profile',GitHub:'Code and projects',Upwork:'Freelance profile',Fiverr:'Freelance gigs',Khamsat:'Arabic freelance profile'};
+var ab={LinkedIn:'in',GitHub:'GH',Upwork:'Up',Fiverr:'Fi',Khamsat:'Kh'};
+$('#findgrid').innerHTML=['Upwork','Fiverr','Khamsat','LinkedIn','GitHub'].map(function(k){return '<a class="fc" href="'+CONFIG.links[k]+'" target="_blank" rel="noopener noreferrer">'+ic(ab[k])+'<strong>'+k+'</strong><span>'+sub[k]+'</span></a>'}).join('');
+
+/* toast */
+var tt;function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-todo]');if(a){e.preventDefault();toast(a.getAttribute('data-todo'))}});
+
+/* contact form */
+$('#form').addEventListener('submit',function(e){
+ e.preventDefault();var f=e.target,m=$('#msg');
+ if(!f.name.value.trim()||!f.email.validity.valid||!f.email.value||!f.message.value.trim()){m.textContent='Please enter your name, a valid email, and a message.';return}
+ if(!CONFIG.email){m.textContent='The contact form is not connected yet. Please reach out through LinkedIn or one of the freelance profiles.';return}
+ var body='From: '+f.name.value+' ('+f.email.value+')\n\n'+f.message.value;
+ location.href='mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Portfolio message from '+f.name.value)+'&body='+encodeURIComponent(body);
+ m.textContent='Opening your email app to send the message.';
+});
+
+/* mobile menu */
+var lk=$('#links'),bg=$('#burger');
+bg.addEventListener('click',function(){var o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+lk.addEventListener('click',function(e){if(e.target.tagName==='A'){lk.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+
+/* active link + reveal */
+if('IntersectionObserver' in window){
+ var links=[].slice.call(lk.querySelectorAll('a'));
+ var so=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+ document.querySelectorAll('main section').forEach(function(s){so.observe(s)});
+ var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target)}})},{threshold:.08});
+ document.querySelectorAll('.rv').forEach(function(r){ro.observe(r)});
+}else{document.querySelectorAll('.rv').forEach(function(r){r.classList.add('in')})}
+</script>
+</body>
+</html>
